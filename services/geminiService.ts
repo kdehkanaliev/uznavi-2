@@ -10,7 +10,7 @@ export const generateItinerary = async (params: {
   days: number;
   pace: Pace;
 }) => {
-  const model = "gemini-2.5-flash";
+  const model = "gemini-1.5-flash";
 
   const prompt = `Generate a detailed day-by-day travel itinerary for Uzbekistan.
   User Profile:
