@@ -1,0 +1,7 @@
+{
+  "name": "UzNavi",
+  "description": "AI-powered travel companion for Uzbekistan with personalized routes, offline maps, and guide booking.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
