@@ -25,36 +25,6 @@ export const generateItinerary = async (params: {
   const response = await ai.models.generateContent({
     model,
     contents: prompt,
-    config: {
-      responseMimeType: "application/json",
-      responseSchema: {
-        type: Type.OBJECT,
-        properties: {
-          days: {
-            type: Type.ARRAY,
-            items: {
-              type: Type.OBJECT,
-              properties: {
-                day: { type: Type.INTEGER },
-                stops: {
-                  type: Type.ARRAY,
-                  items: {
-                    type: Type.OBJECT,
-                    properties: {
-                      time: { type: Type.STRING },
-                      activity: { type: Type.STRING },
-                      placeName: { type: Type.STRING },
-                      description: { type: Type.STRING },
-                    },
-                    required: ["time", "activity", "placeName"],
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
   });
 
   return JSON.parse(response.text);
